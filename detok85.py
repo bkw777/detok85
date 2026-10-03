@@ -2,26 +2,28 @@
 #
 # detok85.py - b.kenyon.w@gmail.com
 #
-# forked from https://github.com/diemheych/trs80m100-list
-# trs80m100_list.py - Convert tokenised TRS 80 Model 100/102/200 BASIC program file to text
+# Forked from https://github.com/diemheych/trs80m100-list
 #
-# Usage: trs80m100_list.py [-h]        Help
-#                          [-cr]       Add CR at end of line (*nix/MacOS)
-#                          infile      Tokenised TRS 80 Model 100/102/200 BASIC program file
+# Print the ascii text source of a tokenized BASIC file
 #
+# Usage: detok85 [-h] [-cr] infile
+# [-h]        Help
+# [-cr]       Output CRLF line endings
+# infile      Tokenised K85 BASIC file (*.BA) from any of the following:
+#             Kyotronic KC-85
+#             TRS-80 Model 100
+#             TANDY Model 102
+#             TANDY Model 200
+#             Olivettin M-10
+#             (NEC PC-8201/PC-8300 not supported)
 #
-# The TRS-80 Model 100/102/200 and the compatible Kyocera Kyotronic-85 and Olivetti M10
-# all use the same tokenized BASIC file format. This program reads a tokenized BASIC file
-# and displays the readable text version of the program.
+# The TRS-80/TANDY Models 100/102/200, Kyotronic KC-85, and Olivetti M-10
+# all use the same tokenized BASIC file format.
+# This program reads a tokenized BASIC file
+# and prints the ascii text source version of the program.
 #
-# The converted program can be read and edited and loaded back into the computer as a text file
-# (.DO extension).
-#
-# As the file format is very simple with no header or magic numbers there is no error checking.
-#
-# Note: the NEC PC-8xxx portable computers do not use the same tokenized BASIC file format.
-#
-
+# The converted program can be read and edited and loaded back into the
+# computer as a text file (.DO extension).
 #
 # Copyright (c) 2024 Darren Hosking @calculatorclique https://github.com/diemheych
 # 
