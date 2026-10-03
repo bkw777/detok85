@@ -1,4 +1,8 @@
+#!/usr/bin/env python3
 #
+# detok85.py - b.kenyon.w@gmail.com
+#
+# forked from https://github.com/diemheych/trs80m100-list
 # trs80m100_list.py - Convert tokenised TRS 80 Model 100/102/200 BASIC program file to text
 #
 # Usage: trs80m100_list.py [-h]        Help
@@ -166,9 +170,9 @@ Tokens = {
 255: "'"
 }
 
-parser = argparse.ArgumentParser(description='Convert tokenised TRS 80 Model 100/102/200 BASIC program file to text')
+parser = argparse.ArgumentParser(description='Output ascii text source of tokenized K85 BASIC file.')
 parser.add_argument('infile')
-parser.add_argument("-cr", action="store_true",help="Add CR at end of line (*nix/MacOS)")
+parser.add_argument("-cr", action="store_true",help="output DOS/Windows CRLF line endings")
 
 args = vars(parser.parse_args())
 arg_count = len(args)
@@ -181,21 +185,20 @@ length = len(pgm)
 current_token = 2
 
 while current_token < length:
-    line = pgm[current_token] + pgm[current_token + 1] * 256
-    print(line, end=' ')
-    current_token = current_token + 2
-    while pgm[current_token] != 0:
-        if pgm[current_token] > 127:
-            print(Tokens[pgm[current_token]],end='')
-            current_token = current_token + 1
-        else:
-            if pgm[current_token:current_token+3] == b':\x8e\xff':
-                print("'",end='')
-                current_token = current_token + 3
-            else:
-                print(chr(pgm[current_token]), end='')
-                current_token = current_token + 1
-    if args['cr']: print('\r', end='')
-    print()
-    current_token = current_token + 3
-     
+	line = pgm[current_token] + pgm[current_token + 1] * 256
+	print(line, end=' ')
+	current_token = current_token + 2
+	while pgm[current_token] != 0:
+		if pgm[current_token] > 127:
+			print(Tokens[pgm[current_token]],end='')
+			current_token = current_token + 1
+		else:
+			if pgm[current_token:current_token+3] == b':\x8e\xff':
+				print("'",end='')
+				current_token = current_token + 3
+			else:
+				print(chr(pgm[current_token]), end='')
+				current_token = current_token + 1
+	if args['cr']: print('\r', end='')
+	print()
+	current_token = current_token + 3
