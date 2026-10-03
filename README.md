@@ -3,7 +3,7 @@
 De-tokenize Kyotronic KC-85 BASIC (TRS-80 Model 100 & clones) to ascii source.
 
 `$ detok85 MYPROG.BA >MYPROG.bas`  
-or
+or  
 `$ detok85 -cr MYPROG.BA >MYPROG.DO`
 
 Input is a tokenized \*.BA file from one of the following machines:  
