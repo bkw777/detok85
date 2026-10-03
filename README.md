@@ -18,7 +18,8 @@ NEC PC-8201
 NEC PC-8201a  
 NEC PC-8300
 
-There are many files in archives on the net ([club100](http://club100.org), [M100SIG](https://github.com/LivingM100SIG/Living_M100SIG), etc) with a \*.BA filename that are already plain ascii. You don't need to detokenize those.  
+There are many files in archives on the net ([club100](http://club100.org), [M100SIG](https://github.com/LivingM100SIG/Living_M100SIG), etc) with a \*.BA filename that are already plain ascii.  
+You don't need to detokenize those.  
 
 The -cr option outputs CRLF line-endings. Aside from general use on DOS/Windows, this is also needed for loading back into K85 / Model 100 BASIC as a .DO file.
 
